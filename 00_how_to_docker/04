@@ -1,0 +1,9 @@
+#!/bin/bash 
+
+# Get the hello-world container from the Docker Hub, where it’s available.
+
+docker run busybox echo hello-world
+
+# https://busybox.net/about.html
+# BusyBox combines tiny versions of many common UNIX utilities into a single small executable. 
+# It provides replacements for most of the utilities you usually find in GNU fileutils, shellutils, etc.

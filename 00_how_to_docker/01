@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Create a virtual machine with docker-machine using the virtualbox driver, andnamed Char.
+
+docker-machine create --driver virtualbox Char
+
+# https://docs.docker.com/machine/reference/create/#specifying-docker-swarm-options-for-the-created-machine
+# https://docs.docker.com/machine/get-started/
