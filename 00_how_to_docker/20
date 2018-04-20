@@ -1,0 +1,14 @@
+# Create a local swarm, the Char virtual machine should be its manager.
+
+host_ip="$(docker-machine ip Char)"
+
+# docker swarm init --advertise-addr $host_ip
+
+docker-machine ssh Char "docker swarm init --advertise-addr $host_ip"
+
+# Docker Swarm is a clustering and scheduling tool for Docker containers. 
+# With Swarm, IT administrators and developers can establish and manage a cluster of Docker nodes as a single virtual system. 
+# docker-machine ssh Char
+# docker node ls
+# docker swarm leave --force
+# https://docs.docker.com/engine/swarm/swarm-tutorial/create-swarm/

@@ -1,0 +1,6 @@
+# Look up the spawning-pool container’s logs in real time without running its shell.
+
+docker logs spawning-pool
+
+# The docker logs command shows information logged by a running container.
+# https://docs.docker.com/config/containers/logging/

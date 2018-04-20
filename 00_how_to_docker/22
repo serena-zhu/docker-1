@@ -1,0 +1,7 @@
+# Turn Aiur into a slave of the local swarm in which Char is leader (the command to take control of Aiur is not requested).
+
+command="$(docker-machine ssh Char "docker swarm join-token worker" | grep 'docker' | sed 's/^ *//')"
+
+docker-machine ssh Aiur "$command"
+
+# https://docs.docker.com/get-started/part4/#create-a-cluster

@@ -1,0 +1,7 @@
+# Relaunch the overlord container.
+
+docker container restart overlord
+
+# https://docs.docker.com/engine/reference/commandline/container_restart/
+# docker exec -it overlord /bin/sh -c 'kill 1'
+# docker inspect -f '{{.RestartCount}}' overlord

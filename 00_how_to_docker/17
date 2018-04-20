@@ -1,0 +1,13 @@
+# Display all the currently active containers on the Char virtual machine.
+
+docker container ls
+
+# https://docs.docker.com/engine/reference/commandline/container_ls/
+# https://stackoverflow.com/questions/16840409/how-to-list-containers-in-docker
+# To show only running containers use the given command: docker ps
+# To show all containers use the given command: docker ps -a
+# To show the latest created container (includes all states) use the given command: docker ps -l
+# To show n last created containers (includes all states) use the given command: docker ps -n=-1
+# To display total file sizes use the given command: docker ps -s
+# To list all running containers: docker container ls
+# To list all containers created irrespective of its state: docker container ls -a

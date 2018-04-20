@@ -1,0 +1,7 @@
+# Create an overlay-type internal network that you will name overmind.
+
+docker network create -d overlay --internal overmind
+
+# https://docs.docker.com/engine/reference/commandline/network_create/#parent-command
+# docker network ls
+# docker network rm overmind
