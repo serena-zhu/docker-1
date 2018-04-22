@@ -10,3 +10,6 @@
 docker run --name lair --link spawning-pool:mysql -p 8080:80  -d wordpress
 
 # http://www.deploycontainers.com/2017/12/29/running-wordpress-mysql-docker-containers/
+# https://stackoverflow.com/questions/34620695/docker-what-is-the-equivalent-of-the-legacy-link-parameter
+# --link may be deprecated and replaced with --net
+# docker run --name lair --net=spawning-pool:mysql -p 8080:80  -d wordpress
