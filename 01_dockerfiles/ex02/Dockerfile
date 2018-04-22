@@ -14,11 +14,19 @@
 # it’s high time to look at the Ruby on Rails documentation.
 
 FROM ruby
+
 RUN apt-get -y update && apt-get -y upgrade && apt-get install -y rails && gem install rails
-ONBUILD RUN rails new my_app && cd my_app
-ONBUILD RUN bundle update && bundle install
+RUN mkdir /opt/app
+WORKDIR /opt/app
+ONBUILD COPY ./my_app /opt/app
+ONBUILD RUN bundle update
+ONBUILD RUN bundle install
 ONBUILD RUN rake db:migrate
-ONBUILD ENTRYPOINT rails server
+
+# docker build -t ft-rails:on-build .
+# docker build -t test -f ./childDocker .
+# docker run -d -it -p 3000:3000 test
+
 
 # apt-get -y update && apt-get -y upgrade && apt-get install -y rails
 # rails new weblog 
@@ -28,5 +36,8 @@ ONBUILD ENTRYPOINT rails server
 # rails server (then go to http://localhost:3000) & (http://localhost:posts)
 # 
 # http://rubyonrails.org/
-
 # http://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/
+# RUN apt-get -y update && apt-get -y upgrade && apt-get install -y build-essential nodejs
+# RUN gem install rails --version 5.0.0
+# RUN gem install bundler
+# ONBUILD RUN rails new my_app && cd my_app
