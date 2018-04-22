@@ -1,5 +1,7 @@
 # Get the real-time logs of one the tasks of the engineering-bay service.
 
-docker service logs -f engineering-bay | grep --line-buffered "^engineering-bay.1" 
+service_id="$(docker service ps engineering-bay -q | head -1)"
+docker service logs -f $service_id
 
 # https://docs.docker.com/engine/reference/commandline/service_logs/
+# docker service logs -f engineering-bay | grep --line-buffered "^engineering-bay.1" 
