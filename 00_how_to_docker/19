@@ -8,17 +8,11 @@
 # virtual machine on the 3000 port.
 # You will also list all the necessary commands in your repository.
 
+docker-machine scp -r ./FlaskApp/ Char:/home
 docker run --name Abathur -p 3000:3000 -v /home:/root -it -d python:2-slim
-docker exec -it Abathur bash
-pip install Flask
-cd ~
-echo "from flask import Flask" > helloworld.py
-echo "app = Flask(__name__)" >> helloworld.py
-echo "@app.route('/')" >> helloworld.py
-echo "def hello():" >> helloworld.py
-echo -e "  return 'Hello World'\n" >> helloworld.py
-echo "if __name__ == '__main__':" >> helloworld.py
-echo "  app.run()" >> helloworld.py
-python helloworld.py
+docker exec -it Abathur pip install Flask
+docker exec -it Abathur bash -c "cd root/FlaskApp && python app.py"
 
 # https://stackoverflow.com/questions/41548711/how-to-access-a-directory-in-hosts-machine-from-inside-a-docker-container
+# https://docs.docker.com/machine/reference/scp/
+# alternatively, can set -e FLASK_APP=app.py when creating container and then docker exec -it bash -c "cd root/FlaskApp && flask run -h 0.0.0.0 -p 3000"
