@@ -6,9 +6,9 @@
 
 
 # To launch debian container: 
-#docker run -it --rm debian /bin/bash
+#docker run -it --rm debian
 
-apt-get update && apt-get install -y git-core && apt-get install -y build-essential && apt-get install -y vim
+apt-get update && apt-get -y upgrade && apt-get install -y git-core && apt-get install -y build-essential && apt-get install -y vim
 
 # https://www.digitalocean.com/community/tutorials/how-to-install-git-on-debian-8
 # https://www.cyberciti.biz/faq/debian-linux-install-gnu-gcc-compiler/s
